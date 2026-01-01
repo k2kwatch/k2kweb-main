@@ -6,8 +6,9 @@ import HeroSection from "@/components/HeroSection";
 import SectionTitle from "@/components/SectionTitle";
 import MovieCard from "@/components/MovieCard";
 import HHCard from "@/components/HHCard";
-import { conanMovies, hhMovies, tvSeries } from "@/data/movies";
+import { conanMovies, doraemonMovie, hhMovies, tvSeries, HHTQMovies } from "@/data/movies";
 import TVCard from "@/components/TVSeriesCard";
+import HHTQCard from "@/components/HHTQCard";
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
@@ -18,7 +19,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* <Navbar /> */}
       <AnnouncementBanner />
       <HeroSection />
 
@@ -43,6 +43,33 @@ const Index = () => {
                   year={movie.year}
                   badge={movie.badge}
                   link={`xem-phim/conan/conan-movie-${movie.movie}`}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+
+        <section id="doraemon-movie" className="mb-24">
+          <SectionTitle
+            title="Doraemon Movie"
+            subtitle="lười cập nhật quá :)"
+            variant="primary"
+          />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+            {doraemonMovie.map((movie, index) => (
+              <div
+                key={`conan-${movie.movie}`}
+                className="animate-slide-up"
+                style={{ animationDelay: `${Math.min(index * 0.05, 0.5)}s` }}
+              >
+                <MovieCard
+                  title={movie.title}
+                  image={movie.img}
+                  movie={movie.movie}
+                  year={movie.year}
+                  badge={movie.badge}
+                  link={`xem-phim/doraemon/doraemon-movie-${movie.movie}`}
                 />
               </div>
             ))}
@@ -75,9 +102,32 @@ const Index = () => {
         </section>
 
 
-        <section id="hh-dk-tq" className="mb-16">
+        <section id="hhtq" className="mb-16">
           <SectionTitle
             title="Hoạt Hình Trung Quốc"
+            subtitle="Failed to fetch subtitle"
+            variant="secondary"
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {HHTQMovies.map((movie, index) => (
+              <div
+                key={`hhtq-${index}`}
+                className="animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <HHTQCard
+                  title={movie.title}
+                  image={movie.img}
+                  link={movie.link}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="hh-dk-tq" className="mb-16">
+          <SectionTitle
+            title="Hoạt Hình Điêu Khắc"
             subtitle="Phim điêu khắc, ngắn,.."
             variant="secondary"
           />
@@ -98,6 +148,8 @@ const Index = () => {
             ))}
           </div>
         </section>
+
+      
       </main>
 
       

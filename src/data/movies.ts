@@ -6,10 +6,26 @@ export interface ConanMovie {
   htmlFile?: string;
   badge?: string;
 }
+export interface DoraemonMovie {
+  title: string;
+  movie: string;
+  year: string;
+  img: string;
+  htmlFile?: string;
+  badge?: string;
+}
+
+
 
 export interface HHMovie {
   title: string;
   time: string;
+  img: string;
+  link: string;
+}
+
+export interface HHTQMovie {
+  title: string;
   img: string;
   link: string;
 }
@@ -22,8 +38,10 @@ export interface TVSeries {
 }
 
 
+
 export const tvSeries: TVSeries[] = [
-  { title: "Thám Tử Lừng Danh Conan", time: "TV Series", img: "https://phimimg.com/upload/vod/20240310-1/025424cf62248b9a7b54279ef5416e26.jpg", link: "/tham-tu-lung-danh-conan" },
+  { title: "Thám Tử Lừng Danh Conan", time: "TV Series", img: "https://phimimg.com/upload/vod/20240310-1/025424cf62248b9a7b54279ef5416e26.jpg", link: "/xem-phim/conan/tham-tu-lung-danh-conan-tv-series" },
+  { title: "Doraemon", time: "TV Series", img: "https://phimimg.com/upload/vod/20250108-1/2eea374f015f589cb6565f2e91be0347.jpg", link: "/xem-phim/doraemon/doraemon-tuyen-tap-moi-nhat-tv-series" },
 ];
 
 export const conanMovies: ConanMovie[] = [
@@ -64,4 +82,12 @@ export const hhMovies: HHMovie[] = [
   { title: "Tình Yêu Từ Đây Sao", time: "23:16", img: "https://i.ytimg.com/vi/E2eLCX-tf10/hqdefault.jpg", link: "xem-phim/hhdktq/tinh-yeu-tu-day-sao/tap-full" },
   { title: "Unknown Playlist", time: "20:21", img: "https://i.postimg.cc/SQ5tbtdt/A56BE9DD-25D7-49EA-B85C-95780DD749FA.png", link: "xem-phim/hhdktq/unknown-playlist/1cb" },
   { title: "Khi Tình Yêu Cất Lời Dối Trá", time: "14:04", img: "https://img.youtube.com/vi/2wpESYj2X-w/hqdefault.jpg", link: "xem-phim/hhdktq/khi-tinh-yeu-cat-loi-doi-tra/tap-full" }
+];
+
+export const HHTQMovies: HHTQMovie[] = [
+  { title: "Già Thiên", img: "https://phimapi.com/image.php?url=https://phimimg.com/upload/vod/20240411-1/0a4084fdfad19ecab9f1f53d629bf422.jpg", link: "/xem-phim/gia-thien" },
+];
+
+export const doraemonMovie: DoraemonMovie[] = [
+  { title: "Doraemon: Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh", movie: "44", year: "2025", img: "https://phimimg.com/upload/vod/20250827-1/f4c07090d886ae98ebfb1f9222ace35f.jpg", htmlFile: "doraemon-movie-44", badge: "MỚI" },
 ];

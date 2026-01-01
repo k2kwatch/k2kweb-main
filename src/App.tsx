@@ -8,6 +8,9 @@ import Shell from "@/components/Shell";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import ConanTVSeries from "@/pages/ThamTuLungDanhConan";
+import DoraemonTVSeries from "@/pages/Doraemon";
+import DoraemonMovie44 from "@/pages/DoraemonMoviebonbon";
+import GiaThien from "@/pages/GiaThien";
 
 // const Kudodz.APIKey = import.meta.env.VITE_KUDODZ_API_KEY;
 
@@ -22,7 +25,10 @@ const App = () => (
         <Routes>
           <Route element={<Shell />}>
             <Route path="/" element={<Index />} />
-            <Route path="/tham-tu-lung-danh-conan" element={<ConanTVSeries />} />
+            <Route path="/xem-phim/conan/tham-tu-lung-danh-conan-tv-series" element={<ConanTVSeries />} />
+            <Route path="/xem-phim/doraemon/doraemon-tuyen-tap-moi-nhat-tv-series" element={<DoraemonTVSeries />} />
+            <Route path="/xem-phim/doraemon/doraemon-movie-44" element={<DoraemonMovie44 />} />
+            <Route path="/xem-phim/gia-thien" element={<GiaThien />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

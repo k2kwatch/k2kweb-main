@@ -1,14 +1,16 @@
 {
   "name": "k2kwatch",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "i": "npm i",
+    "install": "npm i"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
