@@ -1,0 +1,86 @@
+
+
+
+
+const API_BASE = (import.meta.env.VITE_API_BASE as string)?.replace(/\/+$/, "");
+
+if (!API_BASE) {
+ 
+ 
+  console.warn("Missing VITE_API_BASE. Please set it in .env");
+}
+
+export type SafeEpisode = {
+  name: string;
+  slug: string;
+  filename: string;
+};
+
+export type SafeServer = {
+  server_name: string;
+  server_data: SafeEpisode[];
+};
+
+export type SafeMovie = {
+  name: string;
+  origin_name: string;
+  content: string;
+  type?: string;
+  status?: string;
+  poster_url: string;
+  thumb_url: string;
+  time: string;
+  episode_current: string;
+  episode_total: string;
+  quality: string;
+  lang: string;
+  year: number;
+  actor: string[];
+  director: string[];
+  category: { id: string; name: string; slug: string }[];
+  country: { id: string; name: string; slug: string }[];
+};
+
+export type SafeMovieResponse = {
+  status: boolean;
+  msg: string;
+  movie: SafeMovie;
+  episodes: SafeServer[];
+};
+
+export async function apiGetMovie(slug: string, signal?: AbortSignal): Promise<SafeMovieResponse> {
+  const u = new URL(`${API_BASE}/api/movie`);
+  u.searchParams.set("slug", slug);
+
+  const res = await fetch(u.toString(), { signal });
+  if (!res.ok) throw new Error(`movie failed: ${res.status}`);
+  return res.json();
+}
+
+export async function apiGetToken(signal?: AbortSignal): Promise<{ ok: boolean; token: string; exp: number }> {
+  const res = await fetch(`${API_BASE}/api/token`, { signal, cache: "no-store" });
+  if (!res.ok) throw new Error(`token failed: ${res.status}`);
+  return res.json();
+}
+
+export async function apiGetWatchUrl(
+  slug: string,
+  ep: string,
+  token: string,
+  signal?: AbortSignal
+): Promise<{ ok: boolean; url: string; name: string; ep: string; slug: string }> {
+  const u = new URL(`${API_BASE}/api/watch-url`);
+  u.searchParams.set("slug", slug);
+  u.searchParams.set("ep", ep);
+  u.searchParams.set("t", token);
+
+  const res = await fetch(u.toString(), { signal, cache: "no-store" });
+  if (!res.ok) throw new Error(`watch-url failed: ${res.status}`);
+  return res.json();
+}
+
+export function getEpisodeNumber(epName: string): number {
+ 
+  const m = epName.match(/(\d+(?:\.\d+)?)/);
+  return m ? Number(m[1]) : Number.POSITIVE_INFINITY;
+}
