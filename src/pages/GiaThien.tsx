@@ -1,3 +1,19 @@
+//Kdz-chatwithyourteam -- START
+// This File Is Applied By Extension "kdz-chatwithdevteam".
+// ext.kdzz.lol/vscode/chatwithdevteam
+
+// Members Participating In This Project: 
+// kdz, kudodz, kdz[MACOS], kdz[UBUNTU]: https://github.com/kudodzzz
+// skelentzt, skel, skel[macos]: https://github.com/skeletonzz
+
+
+// Server: Chatwithmyteamkdz.dev
+// Url nay se khong co cach nao de vao duoc
+
+
+
+//Kdz-Chatwithyourteam -- END
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import {

@@ -1,15 +1,12 @@
+// configuration
+const base = "https://conan-proxy.kudodz.workers.dev";
 
-
-
-
-const API_BASE = (import.meta.env.VITE_API_BASE as string)?.replace(/\/+$/, "");
-
-if (!API_BASE) {
- 
- 
-  console.warn("Missing VITE_API_BASE. Please set it in .env");
+// missing base
+if (!base) {
+  console.warn("missing api base. set this in lib/phimapi.ts");
 }
 
+// safe types
 export type SafeEpisode = {
   name: string;
   slug: string;
@@ -48,8 +45,10 @@ export type SafeMovieResponse = {
   episodes: SafeServer[];
 };
 
+
+// movie api func
 export async function apiGetMovie(slug: string, signal?: AbortSignal): Promise<SafeMovieResponse> {
-  const u = new URL(`${API_BASE}/api/movie`);
+  const u = new URL(`${base}/api/movie`);
   u.searchParams.set("slug", slug);
 
   const res = await fetch(u.toString(), { signal });
@@ -58,7 +57,7 @@ export async function apiGetMovie(slug: string, signal?: AbortSignal): Promise<S
 }
 
 export async function apiGetToken(signal?: AbortSignal): Promise<{ ok: boolean; token: string; exp: number }> {
-  const res = await fetch(`${API_BASE}/api/token`, { signal, cache: "no-store" });
+  const res = await fetch(`${base}/api/token`, { signal, cache: "no-store" });
   if (!res.ok) throw new Error(`token failed: ${res.status}`);
   return res.json();
 }
@@ -69,7 +68,7 @@ export async function apiGetWatchUrl(
   token: string,
   signal?: AbortSignal
 ): Promise<{ ok: boolean; url: string; name: string; ep: string; slug: string }> {
-  const u = new URL(`${API_BASE}/api/watch-url`);
+  const u = new URL(`${base}/api/watch-url`);
   u.searchParams.set("slug", slug);
   u.searchParams.set("ep", ep);
   u.searchParams.set("t", token);

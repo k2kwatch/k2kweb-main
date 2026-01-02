@@ -1,3 +1,6 @@
+/* Hah? Mày Thực Sự Mò Đến Đây ? */
+/* K2KWatch-project */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,7 +39,6 @@
 
     --radius: 1rem;
 
-    /* Custom K2K tokens */
     --cyan-glow: 187 94% 43%;
     --indigo-glow: 239 84% 67%;
     --gradient-primary: linear-gradient(135deg, hsl(187 94% 43%), hsl(239 84% 67%));
