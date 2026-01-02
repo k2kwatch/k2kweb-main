@@ -9,9 +9,9 @@ import {
   SafeMovieResponse,
 } from "@/lib/phimapi";
 
-const SLUG = "doraemon-tuyen-tap-moi-nhat";
+const SLUG = "doraemon-nobita-va-cuoc-phieu-luu-vao-the-gioi-trong-tranh";
 
-export default function Doraemon() {
+export default function DoraemonMovie44() {
   const [data, setData] = useState<SafeMovieResponse | null>(null);
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState(true);

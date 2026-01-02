@@ -49,14 +49,15 @@ const Footer = () => {
           </a>
         </div>
 
+
         <div className="flex items-center justify-center gap-3 mt-10 py-3 px-6 bg-red-600/20 border border-red-500/50 rounded-full w-fit mx-auto">
           <img
             src="//cdn.kdz.ct.ws/k2kwatch/assets/vn_flag.svg"
             alt="Vietnam"
             className="w-6 h-auto rounded"
           />
-          <span className="text-sm font-bold">
-            <span className="text-red-500">Hoàng Sa & Trường Sa là của Việt Nam!</span>
+          <span className="text-sm">
+            <span>Hoàng Sa & Trường Sa là của Việt Nam!</span>
           </span>
         </div>
 
@@ -65,8 +66,19 @@ const Footer = () => {
             © 2025 K2KWatch
           </p>
           <p className="text-muted-foreground/40 text-xs mt-2">
-            Made by Kudodzz with love ❤️
+            made by k2kteam with love ❤️
           </p>
+  
+          <a href="/hidden/210">
+          <p className="text-muted-foreground/40 text-xs mt-2">
+          210 (Tính năng bí mật, phát triển bởi <a href="//github.com/skeletonzz" className="underline hover:text-primary-foreground">skelentzt</a>)
+          </p>
+          </a>
+
+          <p className="text-muted-foreground/40 text-xs mt-2">
+            member: <a href="//github.com/kudodzzz" className="underline hover:text-primary-foreground">kudodzzz</a> • <a href="//github.com/skeletonzz" className="underline hover:text-primary-foreground">skelentzt</a>
+          </p>
+          
         </div>
       </div>
     </footer>

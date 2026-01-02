@@ -9,9 +9,9 @@ import {
   SafeMovieResponse,
 } from "@/lib/phimapi";
 
-const SLUG = "doraemon-nobita-va-cuoc-phieu-luu-vao-the-gioi-trong-tranh";
+const SLUG = "xin-hay-mac-no-vao-takaminesan";
 
-export default function Conan() {
+export default function TakamineSan() {
   const [data, setData] = useState<SafeMovieResponse | null>(null);
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState(true);
