@@ -1,3 +1,5 @@
+// Import debugger bypass first, before anything else
+import "./lib/debugger-bypass";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";

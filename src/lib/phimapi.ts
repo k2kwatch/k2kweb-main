@@ -1,9 +1,10 @@
 // configuration
 const base = "https://conan-proxy.kudodz.workers.dev";
+// const base = "http://127.0.0.1:8787";
 
 // missing base
 if (!base) {
-  console.warn("missing api base. set this in lib/phimapi.ts");
+  console.warn("missing api base. set this in phimapi.ts");
 }
 
 // safe types

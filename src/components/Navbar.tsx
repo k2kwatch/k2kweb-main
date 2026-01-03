@@ -24,11 +24,11 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const navLinks = [
-    { href: "#conan-movie", label: "Conan Movie" },
-    { href: "#doraemon-movie", label: "Doraemon Movie" },
-    { href: "#tv-series", label: "📺 TV Series" },
-    { href: "#hhtq", label: "Hoạt Hình Trung Quốc" },
-    { href: "#hh-dk-tq", label: "Hoạt Hình Điêu Khắc" },
+    { href: "/#conan-movie", label: "Conan Movie" },
+    { href: "/#doraemon-movie", label: "Doraemon Movie" },
+    { href: "/#tv-series", label: "📺 TV Series" },
+    { href: "/#hhtq", label: "Hoạt Hình Trung Quốc" },
+    { href: "/#hh-dk-tq", label: "Hoạt Hình Điêu Khắc" },
   ];
 
   const totalMovies =
