@@ -23,6 +23,35 @@ const Index = () => {
       <HeroSection />
 
       <main id="mainbody" className="max-w-7xl mx-auto px-4 md:px-6 py-16">
+
+
+        <section className="mb-20">
+          <div id="conan-movie" className="mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+              Thám Tử Lừng Danh Conan Movie
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full" />
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+            {conanMovies.map((movie, index) => (
+              <div
+                key={`conan-${movie.movie}`}
+                className="animate-slide-up"
+                style={{ animationDelay: `${Math.min(index * 0.05, 0.5)}s` }}
+              >
+                <MovieCard
+                  title={movie.title}
+                  image={movie.img}
+                  movie={movie.movie}
+                  year={movie.year}
+                  badge={movie.badge}
+                  link={`xem-phim/conan/conan-movie-${movie.movie}`}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="mb-20">
           <div id="doraemon-movie" className="mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
@@ -61,32 +90,6 @@ const Index = () => {
           </Tabs>
         </section>
 
-        <section className="mb-20">
-          <div id="conan-movie" className="mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              Thám Tử Lừng Danh Conan Movie
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full" />
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-            {conanMovies.map((movie, index) => (
-              <div
-                key={`conan-${movie.movie}`}
-                className="animate-slide-up"
-                style={{ animationDelay: `${Math.min(index * 0.05, 0.5)}s` }}
-              >
-                <MovieCard
-                  title={movie.title}
-                  image={movie.img}
-                  movie={movie.movie}
-                  year={movie.year}
-                  badge={movie.badge}
-                  link={`xem-phim/conan/conan-movie-${movie.movie}`}
-                />
-              </div>
-            ))}
-          </div>
-        </section>
 
         <section className="mb-20">
           <div id="tv-series" className="mb-6">
